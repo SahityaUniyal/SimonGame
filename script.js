@@ -77,8 +77,7 @@ function checkAnswer(cur) {
         var audio = new Audio("sounds/wrong.mp3");
         audio.play();
         setTimeout(function() {
-            var text = $("#instruction").text();
-            text = "Game Over!!! " + text;
+            var text = "Game Over!!!Press Enter to Start or Click";
             $("#instruction").text(text);
             $("#instruction").css("display", "block")
             $('#startButton').text("Start");
@@ -105,7 +104,8 @@ function nextSequence() {
     playSound(colorChosen);
 
     userSequence = [];
-    level++;
+    level = level + 1;
+    $('#startButton').text("level:" + level);
 }
 
 
